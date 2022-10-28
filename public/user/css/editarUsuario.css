@@ -80,6 +80,10 @@ input{
     border-bottom: 1px solid black;
 }
 
+input:focus{
+    outline: none;
+}
+
 p:not(#txtHorizon){
     text-align: center;
     font-family: 'Source Sans Pro', sans-serif;

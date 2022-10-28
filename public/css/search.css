@@ -66,12 +66,10 @@ body{
 }
 
 .left-pan i{
-   
    padding-left: 10px;
 }
 
 .form-input{
-
     height: 55px;
     text-indent: 33px;
     border-radius: 10px;
@@ -82,3 +80,39 @@ body{
     border:none;
     outline: none;
 }
+
+#exibicao{
+    position: absolute;
+    display: grid;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    width: 80%;
+    grid-template-columns: 1fr 2.7fr 0.1fr;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #d4d3d3;
+}
+
+#img{
+    width:80%;
+    height: 20vh;
+}
+
+#btnSalvar{
+    display: none;
+}
+
+/* #heartEmpty{
+    width: 50px;
+    height: 50px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+} */

@@ -9,22 +9,44 @@
     z-index: 1;  
   }
 
+  #navbar{
+    justify-content: space-between;
+    width: 100%;
+    z-index: 1;
+}
+
+#navbarNavDropdown{
+    justify-content: space-between;
+}
+
+#btnLogout{
+    background:none;
+    border: none;
+
+}
+
 #container{
     display: grid;
     grid-template-columns:1fr 4fr 0.5fr ;
     width: 85%;
     height: 50vh;
-    background-color: lightblue;
     position: absolute;
-    border: 5px solid black;
+    border: 2px solid black;
+    border-radius: 6px;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    
 }
 
+.tittle{
+    font-size: large;
+    font-weight: bold;
+}
 #formImagem{
     display: grid;
     align-items: center;
+
 }
 
 #foto{
@@ -75,10 +97,51 @@
     align-items: center;
     top:50%;
     margin-left: 8vh;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 5%;
+}
+
+td{
+    margin-bottom: 100px;
+}
+table:not(#contato){
+    border-right:  1px solid black;
 }
 
 p{
     top:50%;
+}
+
+#nomeFantasia{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#edit{
+    display: none;
+}
+
+@media screen and (max-width:605px) {
+    #container{
+        display: grid;
+        grid-template-columns:none ;
+        grid-template-rows: 1fr 3fr 1fr;
+        width: 85%;
+        height: 75vh;
+        position: absolute;   
+        padding: 10px;     
+    }
+
+    #dados{
+        display: grid;
+        font-family: 'Source Sans Pro', sans-serif;
+        align-items: center;
+        top:50%;
+        margin-left: 0;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 5%;
+    }
+    
 }

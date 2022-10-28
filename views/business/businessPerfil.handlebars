@@ -79,15 +79,76 @@
                 </div>
             </div>
         <div id="dados">
-            <p>Nome fantasia: {{nome}}</p>
+            <div id="dadosSociais">
+                <p class="tittle" >Nome fantasia</p>
+                <p>Razao comercial</p>
+                <p>Representante</p>
+            </div>
+            <div id="dadosEndereco">
+                <p class="tittle">Endereço</p>
+                <p>Rua</p>
+                <p>Numero</p>
+            </div>
+            <div id="dadosContato">
+                <p class="tittle">Contato</p>
+                <p>Telefone</p>
+                <p>email</p>
+            </div>
+
+            {{!-- <div>
+                <p id="nomeFantasia">{{nome}}</p>
+            </div>
             <p>Razão comercial: {{razao}}</p>
             <p>Representante: {{representante}}</p>
-            <p>Rua: {{rua}}</p>
-            <p>Telefone</p>
-            <p>Email</p>
+            <p>{{rua}}</p>
+            <p>Telefone:(31)93864-9798</p>
+            <p>Email:casadosol@gmail.com </p> --}}
+            {{!-- <table cellspacing="10vh" >
+                    <tr>
+                        <th>{{nome}}</th>
+                    </tr>
+                    <tr>
+                        <td>Razão comercial</td>
+                        <td>{{razao}}</td> 
+                    </tr>
+                    <tr>
+                        <td>Representante</td>
+                        <td>{{representante}}</td>
+                    </tr>
+            </table> --}}
+            {{!-- <table>
+                    <tr>
+                        <th>Endereço</th>
+                    </tr>
+                    <tr>
+                        <td>Rua</td>
+                        <td>{{rua}}</td>
+                    </tr>
+                    <tr>
+                        <td>Número</td>
+                        <td>30</td>
+                    </tr>
+
+            </table> --}}
+            {{!-- <table id="contato">
+                    <tr>
+                        <th>Contato</th>
+                    </tr>
+                    <tr>
+                        <td>Telefone</td>
+                        <td>(31)99999-9999</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>email@gmail.com</td>
+                    </tr>
+            </table> --}}
         </div>
         <div>
-            <button>Editar</button>
+        <form action="/user/Edit" method="get" id="editar">
+            <label for="edit"><span class="material-icons" id="icon">edit</span></label>
+            <button id="edit"></button>
+      </form>
         </div>
         </div>
     </div>

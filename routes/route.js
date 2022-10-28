@@ -1,4 +1,3 @@
-
 const express = require('express');
 const route = express.Router()
 
@@ -33,6 +32,22 @@ route.get("/business/Signup", (req,res)=>{
         title: "Entrar",
         style: "cadastroEmpresa.css",
         script: "businessSignup.js"
+    })
+})
+
+route.get('/business/ViewBusiness', (req,res)=>{
+    res.render("business/businessUser",{
+        title: "Teste",
+        style: "businessUser.css",
+        script: "businessUser.js"
+    })
+})
+
+route.get('/business/Login',(req,res)=>{
+    res.render("business/businessLogin",{
+        title: "Login",
+        style: "businessLogin.css",
+        script: "businessLogin.js"
     })
 })
 

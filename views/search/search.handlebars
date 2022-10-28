@@ -33,27 +33,27 @@
   </div>
   </nav>
 </header>
- <div id="flashMsg">
-    {{#if success_msg}}
-    <div class="alert alert-success">
-      <p>{{success_msg}}</p>
-      <p class="btnClose">X</p>
-    </div>
-    {{/if}}
-
-    {{#if error_msg}}
-    <div class="alert alert-danger">
-      <p>{{error_msg}}</p>
-      <p class="btnClose">X</p>
-    </div>
-    {{/if}}
-    {{#if warning_msg}}
-    <div class="alert alert-warning">
-      <p>{{warning_msg}}</p>
-      <p class="btnClose">X</p>
-    </div>
-    {{/if}}
+<div id="flashMsg">
+  {{#if success_msg}}
+  <div class="alert alert-success">
+    <p>{{success_msg}}</p>
+    <p class="btnClose">X</p>
   </div>
+  {{/if}}
+
+  {{#if error_msg}}
+  <div class="alert alert-danger">
+    <p>{{error_msg}}</p>
+    <p class="btnClose">X</p>
+  </div>
+  {{/if}}
+  {{#if warning_msg}}
+  <div class="alert alert-warning">
+    <p>{{warning_msg}}</p>
+    <p class="btnClose">X</p>
+  </div>
+  {{/if}}
+</div>
 <main>
   <div id="container">
     <div class="row height d-flex justify-content-center align-items-center" id="searchBar">
@@ -61,8 +61,7 @@
         <div class="form">
           <i class="fa fa-search"></i>
           <form action="/search" method="get">
-            <input type="text" class="form-control form-input" name="search" id="q" onKeyUp="showResults(this.value)"
-              placeholder="Pesquise aqui..." />
+            <input type="text" class="form-control form-input" name="search" id="q" placeholder="Pesquise aqui..." />
             <span class="left-pan"><i class="fa fa-microphone"></i></span>
             <div id="result"></div>
           </form>
@@ -70,21 +69,32 @@
       </div>
     </div>
     {{#each enviar}}
+    <div id="exibicao">
       <div>
-        <img src={{foto}}>
+        <img src={{foto}} id="img">
+      </div>
+      <div id="dados">
         <h3>{{nome}}</h3>
-        <label>{{rua}}, </label>
-        <label>{{numero}}</label>
+        <div>
+          <label>{{rua}}, </label>
+          <label>{{numero}}</label>
+        </div>
+      </div>
+      <div>
         <form action="/search" method="post">
-          <button name={{id}}>{{salve}}</button>
+          <label for="btnSalvar" class="heartEmpty">
+            <span class="material-symbols-outlined" class="heartEmpty">favorite</span>
+          </label>
+          <button name={{id}} id="btnSalvar">{{salve}}</button>
         </form>
       </div>
+    </div>
     {{else}}
 
     {{/each}}
   </div>
 
-  
+
   {{!-- <form autocomplete="off">
     <div id="container">
       <input type="text" name="q" id="q" onKeyUp="showResults(this.value)" />

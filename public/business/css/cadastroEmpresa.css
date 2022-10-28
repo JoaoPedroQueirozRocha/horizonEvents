@@ -63,6 +63,9 @@ input{
     /* width: 30%; */
 }
 
+input:focus{
+    outline: none;
+}
 
 #endereco input{
     margin-right: 8%;

@@ -4,7 +4,7 @@ const app = express()
 const {engine} = require('express-handlebars')
 const bodyParser = require('body-parser')
 const path = require('path')
-const port = 3000;
+const port = 8080;
 const route = require("./routes/route") 
 const session = require('express-session')
 const flash = require('connect-flash')
@@ -864,4 +864,37 @@ app.get('/business/Perfil',(req,res)=>{
             erros: erros
         })
     }
+})
+
+
+app.post("/business/Login", async(req,res,next)=>{
+    var erros = []
+    var user = `SELECT* FROM Empresa WHERE CNPJ='${req.body.CNPJ}'`
+    con.query(user, async function (err, result, fields) {
+        if(result.length > 0){
+            const sessao=req.session;
+            sessao.user = req.body.CNPJ
+            let senha = await bcrypt.compare(req.body.senha, result[0].Senha)
+            if(senha){
+                res.redirect('/business/Perfil')
+            }else{
+                erros.push({texto:"Senha incorreta"})
+                res.render("business/businessLogin",{
+                    title: "Entrar",
+                    style: "businessLogin.css",
+                    erros: erros,
+                    cnpj_erro: result[0].CNPJ,
+                    script: 'businessLogin.js'
+                })
+            }
+        }else{
+            erros.push({texto:"Essa conta não existe"})
+            res.render("business/businessLogin",{
+                title: "Entrar",
+                style: "businessLogin.css",
+                erros: erros,
+                script: 'businessLogin.js'
+        })
+    }
+});
 })
